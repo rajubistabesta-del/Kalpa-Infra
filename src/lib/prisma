@@ -1,0 +1,5 @@
+// src/lib/prisma.ts
+import { PrismaClient } from '@prisma/client';
+
+// Simple singleton Prisma client
+export const prisma = new PrismaClient();

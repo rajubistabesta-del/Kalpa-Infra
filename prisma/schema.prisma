@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Enum for plan styles
+enum Style {
+  MODERN
+  TROPICAL
+  NEWARI
+  SCANDI
+  CHALET
+  DUPLEX
+}
+
+// Plan model
+model Plan {
+  id        Int      @id @default(autoincrement())
+  title     String
+  style     Style
+  floors    Int
+  bhk       Int
+  areaSft   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
